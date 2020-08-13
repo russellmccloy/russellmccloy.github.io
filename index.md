@@ -6,6 +6,5 @@ layout: home
 
 ---
 
-# Welcomex
 
 Hi, and welcome to my technical blog. I will attempt to keep this updated with anything I find that, I think, may help the community.
