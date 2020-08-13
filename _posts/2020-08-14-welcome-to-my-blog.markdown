@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to my technical blogx"
+title:  "Welcome to my technical blog"
 date:   2020-08-14 07:26:18 +1000
 categories: jekyll update
 
