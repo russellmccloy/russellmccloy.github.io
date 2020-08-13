@@ -24,8 +24,8 @@ github_username:  russellmccloy
 
 # Build settings
 markdown: kramdown
-# theme: minima
-theme: alembic-jekyll-theme
+theme: minima
+
 plugins:
   - jekyll-feed
 
