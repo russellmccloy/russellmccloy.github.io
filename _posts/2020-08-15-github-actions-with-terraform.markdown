@@ -100,8 +100,8 @@ The rest of the file sets up Terraform, runs INIT, PLAN and APPLY:
 ```
 
 the gitGub Action runs these in an easy to understand viewer:
-![action_running.png](readme_images/action_running.png)
+![action_running](/assets/action_running.jpg)
 
 
 the final deployed result is as follows:
-![Deployed](readme_images/az-sa-created.png)
+![Deployed](/assets/az-sa-created.jpg)
