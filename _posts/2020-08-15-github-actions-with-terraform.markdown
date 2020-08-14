@@ -17,7 +17,8 @@ This repository demonstrates using GitHub Actions to deploy Azure resources with
 
 It uses Github secrets to store the `client secret` for the `providers.tf` file and the `storage account key` for the `backend.tf` file.
 
-![Secrets](readme_images/github-secrets.png)
+![Secrets](/assets/secrets.jpg)
+
 the terraform state is storage in a container in an already created storage account in Azure.
 
 When you set up a GitHub action you need to put a `/.github/workflows/something.yaml` file in your solution
