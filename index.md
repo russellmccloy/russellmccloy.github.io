@@ -12,6 +12,7 @@ My current list of main technical skill are:
 
 - DevOps
 - Automation
+- Terraform
 - Testing
 - Golang
 - Python
