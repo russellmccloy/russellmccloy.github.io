@@ -11,18 +11,16 @@ categories: jekyll update
 
 Hi there. This is my new technical blog.
 
-Jekyll also offers powerful support for code snippets:
+I usually keep a blog but have got a bit lazy of the past few months with regard to keeping it up to date. I also struggled with a decent blogging platform and this morning I found <https://jekyllrb.com/>.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+**Jekyll** allows me to write my blog within **VSCode** and push to a **GitHub** repository to publish it. I really like this as it fits with the workflow that I use every day in my development practices.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+**I like writing and having a blog for the following reasons:**
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+- It helps me solidify my learning by forcing me to write it down. I feel this helps fully embed the knowledge in my slightly forgetful mind.
+- It is not to show off but, if it helps others, that's great.
+- It's guaranteed job interview question and I suppose it can immediately instill confidence in a prospective employer.
+
+If you find any errors or you have an opinion you can contact me here: [{{ site.email }}][my-email]
+
+[my-email]: mailto:{{ site.email }}
