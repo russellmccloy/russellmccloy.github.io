@@ -24,7 +24,8 @@ linkedin_username: russell-mccloy
 # Build settings
 markdown: kramdown
 
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
+theme: minima
 
 plugins:
   - jekyll-feed
