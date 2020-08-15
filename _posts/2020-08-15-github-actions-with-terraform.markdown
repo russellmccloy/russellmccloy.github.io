@@ -2,8 +2,7 @@
 layout: post
 title:  "GitHub Actions with Terraform - simple"
 date:   2020-08-15 11:26:18 +1000
-categories: github
-
+categories: general
 
 ---
 
