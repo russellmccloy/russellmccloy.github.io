@@ -27,6 +27,8 @@ markdown: kramdown
 # theme: minimal-mistakes-jekyll
 theme: minima
 
+future: false
+
 plugins:
   - jekyll-feed
 

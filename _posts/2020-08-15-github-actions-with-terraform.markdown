@@ -6,7 +6,7 @@ categories: general
 
 ---
 
-# GitHub Actions with Terraform
+## GitHub Actions with Terraform
 
 Note that you can get the markdown for a status badge to put in your README from the Action home page:
 
