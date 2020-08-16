@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Documentation Sucks - But it doesn't"
-date:   2020-08-17 11:26:18 +1000
+date:   2020-08-17 07:26:18 +1000
 categories: general
 
 ---
