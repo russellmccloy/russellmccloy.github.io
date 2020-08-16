@@ -2,7 +2,6 @@
 layout: page
 title: About
 permalink: /about/
-show_dir_listing: false
 
 ---
 
