@@ -2,6 +2,8 @@
 layout: page
 title: About
 permalink: /about/
+show_dir_listing: false
+
 ---
 
 Russell is a highly motivated and driven professional that achieves results though a pragmatic approach. He has gained a diverse range of experience from working in the IT industry for more than 21 years in Sydney, London and Melbourne and has become a well-rounded and knowledgeable individual with a broad skill set.

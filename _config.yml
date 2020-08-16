@@ -29,7 +29,6 @@ theme: minima
 
 future: false
 timezone: Australia/Melbourne
-show_dir_listing: false
 
 plugins:
   - jekyll-feed
