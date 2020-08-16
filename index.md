@@ -10,7 +10,7 @@ Hi, and welcome to my technical blog. I will attempt to keep this updated with a
 
 My current list of main technical skill are:
 
-- DevOps {{ page.date | date_to_rfc822 }}
+- DevOps
 - Automation
 - Terraform
 - Testing
