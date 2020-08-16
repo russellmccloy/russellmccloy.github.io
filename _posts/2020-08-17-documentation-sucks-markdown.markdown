@@ -49,8 +49,7 @@ def do_something(something):
 ![markdownlint](/assets/markdownlint_1.jpg)
 you can immediately fix it.
 These rules are described in full on this page: <https://github.com/DavidAnson/markdownlint/blob/v0.20.4/doc/Rules.md>:
-![rules](/assets/rules1.jpg)
-- <https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint>
+![rules](/assets/rules1.jpg) <https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint>
 
 - **Code Spell Checker** - This extension checks you spelling in code and documentation. Yes, even though you write code you still need correct spelling. How many times have you completed a Pull Request for a colleague and the code is awesome but they can't spell!? <https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker>
 
