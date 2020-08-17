@@ -25,7 +25,7 @@ linkedin_username: russell-mccloy
 markdown: kramdown
 
 # theme: minimal-mistakes-jekyll
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 
 future: false
 timezone: Australia/Melbourne
