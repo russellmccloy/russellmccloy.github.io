@@ -18,7 +18,7 @@ I usually keep a blog but have got a bit lazy of the past few months with regard
 
 - It helps me solidify my learning by forcing me to write it down. I feel this helps fully embed the knowledge in my slightly forgetful mind.
 - It is not to show off but, if it helps others, that's great.
-- It's guaranteed job interview question and I suppose it can immediately instill confidence in a prospective employer.
+- It's a guaranteed job interview question and I suppose it can immediately instill confidence in a prospective employer.
 
 If you find any errors or you have an opinion you can contact me here: [{{ site.email }}][my-email]
 
