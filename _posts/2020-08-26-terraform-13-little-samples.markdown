@@ -22,7 +22,7 @@ You can find the official release here:
 
 - [New Kubernetes remote state storage backend](https://www.terraform.io/docs/backends/types/kubernetes.html): This backend stores state snapshots as Kubernetes secrets. [#19525](https://github.com/hashicorp/terraform/issues/19525)
 
-## Working samples of the above
+## Working samples of the above list
 
 Note that in my `version.tf` file I have the following which specifies Terraform version `0.13.0`:
 ```hcl
@@ -143,7 +143,7 @@ Modules can now use the depends_on argument to ensure that all module resource c
 
 This is what version `0.12.29` would have done if you attempted to use depends on with modules:
 
-```hcl
+```bash
 Error: Reserved argument name in module block
 
   on main.tf line 9, in module "my_storage_account":
