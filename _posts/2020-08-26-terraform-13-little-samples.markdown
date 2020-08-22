@@ -6,7 +6,7 @@ categories: general
 
 ---
 
-Today I'd like to write a little bit about Terraform 13 which was released on the 10/08/2020
+Today I'd like to write a little bit about Terraform `0.13.0` which was released on the 10/08/2020
 You can find the official release here: 
 [https://github.com/hashicorp/terraform/releases/tag/v0.13.0](https://github.com/hashicorp/terraform/releases/tag/v0.13.0)
 
@@ -37,7 +37,7 @@ terraform {
 }
 ```
 
-Also, for completeness my `provider.tf` file looks like this as I am working with azure:
+Also, for completeness my `provider.tf` file looks like this as I am working with Azure:
 
 ```hcl
 provider "azurerm" {
@@ -77,7 +77,7 @@ resource "azurerm_resource_group" "example" {
 }
 ```
 
-As you can see, this module takes a `count` from `instance_count` and it builds up its name using this `count`.
+As you can see, this module takes a `count` from `instance_count` variable and it builds up its name using this `count`.
 
 Now, in my `main.tf` file we will use this module to create three resources groups as mentioned in the scenario above.
 
@@ -108,7 +108,7 @@ now we can run:
 - `terraform init`
 - `terraform plan`
 
-From the plan'2 output we can see that Terraform will create the three resources groups as described above:
+From the `plan` output we can see that Terraform will create the three resources groups as described above:
 
 ```ssh
 Terraform will perform the following actions:
@@ -201,10 +201,10 @@ locals {
 
 So in summary:
 
-- we have three resource group properties defined in our map.
+- we have three resource group properties defined in our map
 - we pass this map into our module
 - the module receives this data through the above mentioned variable
-- the module iterates through the passed in data and deploys three resource groups with three different names into three different regions.
+- the module iterates through the passed in data and deploys three resource groups with three different names into three different regions
 
 ```ssh
 An execution plan has been generated and is shown below.
@@ -241,7 +241,7 @@ That's it for now!
 
 ### depends_on for modules
 
-Modules can now use the depends_on argument to ensure that all module resource changes will be applied after any changes to the depends_on targets have been applied.
+Modules can now use the `depends_on` property to ensure that all module resource changes will be applied after any changes to the depends_on targets have been applied.
 
 This is what version `0.12.29` would have done if you attempted to use depends on with modules:
 
@@ -258,7 +258,7 @@ But now with Terraform `0.13.0` you can do this:
 
 ![Depends On](/assets/depends_on.png)
 
-> Admittedly, the above depends on example is not great but you get the idea. 
+> Admittedly, the above `depends_on` example is not great but you get the idea.
 
 ### Automatic installation of third-party providers
 
@@ -355,7 +355,7 @@ That's all there is to it.
 
 ### Custom validation rules for input variables
 
-This section describes the new custom validation rules you can add to your input variable. the idea here is you can control what is allowed / not-allowed to be passed in as a variable.
+This section describes the new custom validation rules that you can add to your input variables. The idea here is you can control what is allowed / not-allowed to be passed in as a variable.
 
 you may remember our `resource_group_name` variable from above. Here we have added some validation to it to ensure the name starts with `rg-`:
 
@@ -365,10 +365,10 @@ variable "resource_group_name" {
 
   validation {
     condition     = can(regex("^rg-", var.resource_group_name))
-    error_message = "Hey, we have naming standards around here. Please prefix your resource group name with:  \"rg-\"."
+    error_message = "Hey, we have naming standards around here! Please prefix your resource group name with:  \"rg-\"."
   }
 
-  default = "xrg-"
+  default = "nope"
 }
 ```
 
