@@ -194,7 +194,7 @@ Then when we run `terraform init -upgrade` we see the providers being downloaded
 
 > Note: `terraform init -upgrade` blows any previous downloads away and gets fresh ones.
 
-```hcl
+```ssh
 Upgrading modules...
 - my_many_resource_groups in modules/resource_group
 
