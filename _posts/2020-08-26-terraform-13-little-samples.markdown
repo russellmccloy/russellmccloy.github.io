@@ -136,3 +136,170 @@ Plan: 3 to add, 0 to change, 0 to destroy.
 ```
 
 It's not fancy, but I hope you get the idea.
+
+### depends_on for modules
+
+Modules can now use the depends_on argument to ensure that all module resource changes will be applied after any changes to the depends_on targets have been applied.
+
+This is what version `0.12.29` would have done if you attempted to use depends on with modules:
+
+```hcl
+Error: Reserved argument name in module block
+
+  on main.tf line 9, in module "my_storage_account":
+   9:   depends_on = [module.my_many_resource_groups]
+
+The name "depends_on" is reserved for use in a future version of Terraform.
+```
+
+But now with Terraform `0.13.0` you can do this:
+
+![Depends On](/assets/depends_on.png)
+
+> Admittedly, the above depends on example is not great but you get the idea. 
+
+### Automatic installation of third-party providers
+
+In this section I will describe how to automatically install 3rd party providers.
+
+We would like to automatically install the following two providers:
+
+- Azure DevOps provider - [https://registry.terraform.io/providers/ellisdon-oss/azuredevops/latest](https://registry.terraform.io/providers/ellisdon-oss/azuredevops/latest)
+- Terraform Random provider - [https://registry.terraform.io/providers/hashicorp/random/latest](https://registry.terraform.io/providers/hashicorp/random/latest)
+
+from the Terraform Registry which is here: [https://registry.terraform.io/](https://registry.terraform.io/)
+
+So, in my `versions.tf` file I will do the following:
+```hcl
+terraform {
+  required_version = "~> 0.13.0"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 2.0"
+    }
+    azuredevops = {
+      source = "ellisdon-oss/azuredevops"
+      version = "0.0.2"
+    }
+    random = {
+      source = "hashicorp/random"
+      version = "2.3.0"
+    }
+  }
+}
+```
+
+Then when we run `terraform init -upgrade` we see the providers being downloaded: 
+
+> Note: `terraform init -upgrade` blows any previous downloads away and gets fresh ones.
+
+```hcl
+Upgrading modules...
+- my_many_resource_groups in modules/resource_group
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding ellisdon-oss/azuredevops versions matching "0.0.2"...
+- Finding hashicorp/random versions matching "2.3.0"...
+- Finding hashicorp/azurerm versions matching "~> 2.0, ~> 2.0"...
+- Installing ellisdon-oss/azuredevops v0.0.2...
+- Installed ellisdon-oss/azuredevops v0.0.2 (self-signed, key ID 1033ECE171B90D34)
+- Installing hashicorp/random v2.3.0...
+- Installed hashicorp/random v2.3.0 (signed by HashiCorp)
+- Installing hashicorp/azurerm v2.24.0...
+- Installed hashicorp/azurerm v2.24.0 (signed by HashiCorp)
+
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/plugins/signing.html
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```
+
+You can see that it downloaded the required providers for you.
+
+I won't go into the Azure DevOps provider but I will however show you an example of why I downloaded the Terraform Random provider.
+
+You may remember that originally, the resource groups I am deploying were named like this: `rg-1, rg-2` etc.
+
+now we will use a randomly generated string instead:
+
+```hcl
+resource "azurerm_resource_group" "example" {
+
+  count = var.instance_count
+
+  name     = "${random_string.random.result}${count.index + 1}"
+  location = "Australia East"
+}
+
+resource "random_string" "random" {
+  length  = 24
+  special = false
+}
+```
+
+That's all there is to it.
+
+### Custom validation rules for input variables
+
+This section describes the new custom validation rules you can add to your input variable. the idea here is you can control what is allowed / not-allowed to be passed in as a variable.
+
+you may remember our `resource_group_name` variable from above. Here we have added some validation to it to ensure the name starts with `rg-`:
+
+```hcl
+variable "resource_group_name" {
+  type = string
+
+  validation {
+    condition     = can(regex("^rg-", var.resource_group_name))
+    error_message = "Hey, we have naming standards around here. Please prefix your resource group name with:  \"rg-\"."
+  }
+
+  default = "xrg-"
+}
+```
+
+And when we run `terraform plan` you can see that it stops you in your tracks:
+
+```hcl
+Error: Invalid value for variable
+
+  on modules/resource_group/variables.tf line 1:
+   1: variable "resource_group_name" {
+
+Hey, we have naming standards around here. Please prefix your resource group
+name with:  "rg-".
+
+This was checked by the validation rule at
+modules/resource_group/variables.tf:4,3-13.
+```
+
+You could also check the minimum length:
+
+```hcl
+variable "resource_group_name" {
+  type = string
+
+  validation {
+    condition     = length(var.resource_group_name) > 4 && substr(var.resource_group_name, 0, 4) == "rg-"
+    error_message = "Hey, we have naming standards around here. Please prefix your resource group name with:  \"rg-\" and make sure it is more than 4 characters long."
+  }
+
+  default = "nope"
+}
+```
+
+Obviously, don't use validation as the only control around naming standards, maybe introduce a `naming` module to enforce naming standards. 
+
+### New Kubernetes remote state storage backend
