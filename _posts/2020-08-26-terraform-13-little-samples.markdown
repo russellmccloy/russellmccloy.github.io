@@ -48,6 +48,8 @@ provider "azurerm" {
 
 ### count and for_each for modules
 
+#### count
+
 This feature is very simple. You can easily create multiple instances of a module from a **single** module block.
 
 So here is a scenario and remember this is very simplistic for the purposes of this demo.
@@ -136,6 +138,106 @@ Plan: 3 to add, 0 to change, 0 to destroy.
 ```
 
 It's not fancy, but I hope you get the idea.
+
+#### for_each
+
+This feature is a little more complex but gives you much more control over the data in the map you iterate over to produce multiple resources from a single module.
+
+In this scenario we will create a variable on our module that receives a map of objects that describes our resource group's name and location:
+
+```hcl
+variable "resource_groups" {
+  type = map(object({
+    name      = string
+    location  = string
+  }))
+}
+```
+
+The code for our resource group within our module now looks like this:
+
+```hcl
+resource "azurerm_resource_group" "example" {
+
+  for_each = var.resource_groups
+
+  name     = each.value.name
+  location = each.value.location
+}
+```
+
+And in our code that consumes the module we have this:
+
+```hcl
+module "my_many_resource_groups" {
+  source = "./modules/resource_group"
+
+  resource_groups = local.resource_groups
+}
+```
+
+and for simplicity I have hard coded the map into a local:
+
+```hcl
+locals {
+  resource_groups = {
+    rg1 = {
+      name     = "rg-1"
+      location = "Australia East"
+    }
+
+    rg2 = {
+      name     = "rg-2"
+      location = "Australia SouthEast"
+    }
+
+    rg3 = {
+      name     = "rg-3"
+      location = "Australia Central"
+    }
+  }
+}
+```
+
+So in summary:
+
+- we have three resource group properties defined in our map.
+- we pass this map into our module
+- the module receives this data through the above mentioned variable
+- the module iterates through the passed in data and deploys three resource groups with three different names into three different regions.
+
+```ssh
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.my_many_resource_groups.azurerm_resource_group.example["rg1"] will be created
+  + resource "azurerm_resource_group" "example" {
+      + id       = (known after apply)
+      + location = "australiaeast"
+      + name     = "rg-1"
+    }
+
+  # module.my_many_resource_groups.azurerm_resource_group.example["rg2"] will be created
+  + resource "azurerm_resource_group" "example" {
+      + id       = (known after apply)
+      + location = "australiasoutheast"
+      + name     = "rg-2"
+    }
+
+  # module.my_many_resource_groups.azurerm_resource_group.example["rg3"] will be created
+  + resource "azurerm_resource_group" "example" {
+      + id       = (known after apply)
+      + location = "australiacentral"
+      + name     = "rg-3"
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+```
+
+That's it for now!
 
 ### depends_on for modules
 
