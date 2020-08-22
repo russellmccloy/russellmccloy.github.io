@@ -108,7 +108,7 @@ now we can run:
 
 From the plan'2 output we can see that Terraform will create the three resources groups as described above:
 
-```hcl
+```ssh
 Terraform will perform the following actions:
 
   # module.my_many_resource_groups.azurerm_resource_group.example[0] will be created
@@ -143,7 +143,7 @@ Modules can now use the depends_on argument to ensure that all module resource c
 
 This is what version `0.12.29` would have done if you attempted to use depends on with modules:
 
-```bash
+```ssh
 Error: Reserved argument name in module block
 
   on main.tf line 9, in module "my_storage_account":
@@ -272,7 +272,7 @@ variable "resource_group_name" {
 
 And when we run `terraform plan` you can see that it stops you in your tracks:
 
-```hcl
+```ssh
 Error: Invalid value for variable
 
   on modules/resource_group/variables.tf line 1:
