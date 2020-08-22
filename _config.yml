@@ -27,7 +27,7 @@ markdown: kramdown
 # theme: minimal-mistakes-jekyll
 theme: minima
 
-future: false
+future: true
 timezone: Australia/Melbourne
 
 plugins:
