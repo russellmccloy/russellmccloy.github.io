@@ -405,3 +405,19 @@ variable "resource_group_name" {
 Obviously, don't use validation as the only control around naming standards, maybe introduce a `naming` module to enforce naming standards. 
 
 ### New Kubernetes remote state storage backend
+
+As mentioned above this feature allows you to store your Terraform state in a Kubernetes secret with locking done using a Lease resource.
+
+Here are the details:
+[https://www.terraform.io/docs/backends/types/kubernetes.html](https://www.terraform.io/docs/backends/types/kubernetes.html)
+
+I have not worked with this to it is hard for me to comment but I think the gist is that, Terraform has given us a new `backend` type.
+
+![Backend Types](/assets/backend_types.png)
+
+I presume the benefit here is that you can store all your assets close the the product you are working on instead of having your state stored somewhere else such as an Azure Storage Account, for example.
+
+Please feel free to let me know more about the Kubernetes remote state storage backend and I will update the information here.
+
+Cheers
+Russ
