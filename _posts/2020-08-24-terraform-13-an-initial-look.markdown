@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Terraform 0.13.0 - An Initial Look"
-date:   2020-08-26 07:26:18 +1000
+date:   2020-08-26 09:26:18 +1000
 categories: general
 
 ---
@@ -10,13 +10,15 @@ Today I'd like to write a little bit about Terraform `0.13.0` which was released
 You can find the official release here: 
 [https://github.com/hashicorp/terraform/releases/tag/v0.13.0](https://github.com/hashicorp/terraform/releases/tag/v0.13.0)
 
+Unlike many other blogs on this subject, I have tried and tested all the new features below apart from the **New Kubernetes remote state storage backend** feature.
+
 **Some of the new features are as follows:**
 
 - [count and for_each for modules](https://www.terraform.io/docs/configuration/modules.html#multiple-instances-of-a-module): Similar to the arguments of the same name in resource and data blocks, these create multiple instances of a module from a single module block. [#24461](https://github.com/hashicorp/terraform/issues/24461)
 
 - [depends_on for modules](https://www.terraform.io/docs/configuration/modules.html#other-meta-arguments): Modules can now use the depends_on argument to ensure that all module resource changes will be applied after any changes to the depends_on targets have been applied. [#25005](https://github.com/hashicorp/terraform/issues/25005)
 
-- [Automatic installation of third-party providers](https://www.terraform.io/docs/configuration/provider-requirements.html): Terraform now supports a decentralized namespace for providers, allowing for automatic installation of community providers from third-party namespaces in the public registry and from private registries. (More details will be added about this prior to release.)
+- [Automatic installation of third-party providers](https://www.terraform.io/docs/configuration/provider-requirements.html): Terraform now supports a decentralized namespace for providers, allowing for automatic installation of community providers from third-party namespaces in the public registry and from private registries. (More details will be added about this prior to release - *Obviously they forgot to update this part after the release!* :))
 
 - [Custom validation rules for input variables](https://www.terraform.io/docs/configuration/variables.html#custom-validation-rules): A new validation block type inside variable blocks allows module authors to define validation rules at the public interface into a module, so that errors in the calling configuration can be reported in the caller's context rather than inside the implementation details of the module. [#25054](https://github.com/hashicorp/terraform/issues/25054)
 
