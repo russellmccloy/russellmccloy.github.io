@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Terraform 0.13.0 - An Initial Look"
-date:   2020-08-26 09:26:18 +1000
+date:   2020-08-26 06:26:18 +1000
 categories: general
 
 ---
