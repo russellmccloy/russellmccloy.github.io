@@ -27,6 +27,7 @@ Unlike many other blogs on this subject, I have tried and tested all the new fea
 ## Working samples of the above list
 
 Note that in my `version.tf` file I have the following which specifies Terraform version `0.13.0`:
+
 ```hcl
 terraform {
   required_version = "~> 0.13.0"
@@ -67,7 +68,6 @@ So we will end up with three resources groups as follows:
 Firstly let's write our resource group module. Here you can see the layout of my project. Note that I have placed my module in a local folder called `/modules/resource_group`:
 
 ![Layout](/assets/rg_module.png)
-
 
 ```hcl
 resource "azurerm_resource_group" "example" {
@@ -274,6 +274,7 @@ We would like to automatically install the following two providers:
 from the Terraform Registry which is here: [https://registry.terraform.io/](https://registry.terraform.io/)
 
 So, in my `versions.tf` file I will do the following:
+
 ```hcl
 terraform {
   required_version = "~> 0.13.0"
@@ -294,7 +295,7 @@ terraform {
 }
 ```
 
-Then when we run `terraform init -upgrade` we see the providers being downloaded: 
+Then when we run `terraform init -upgrade` we see the providers being downloaded:
 
 > Note: `terraform init -upgrade` blows any previous downloads away and gets fresh ones.
 
@@ -404,7 +405,7 @@ variable "resource_group_name" {
 }
 ```
 
-Obviously, don't use validation as the only control around naming standards, maybe introduce a `naming` module to enforce naming standards. 
+Obviously, don't use validation as the only control around naming standards, maybe introduce a `naming` module to enforce naming standards.
 
 ### New Kubernetes remote state storage backend
 
