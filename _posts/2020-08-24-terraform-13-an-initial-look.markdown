@@ -382,7 +382,7 @@ Error: Invalid value for variable
   on modules/resource_group/variables.tf line 1:
    1: variable "resource_group_name" {
 
-Hey, we have naming standards around here. Please prefix your resource group
+Hey, we have naming standards around here! Please prefix your resource group
 name with:  "rg-".
 
 This was checked by the validation rule at
@@ -397,7 +397,7 @@ variable "resource_group_name" {
 
   validation {
     condition     = length(var.resource_group_name) > 4 && substr(var.resource_group_name, 0, 4) == "rg-"
-    error_message = "Hey, we have naming standards around here. Please prefix your resource group name with:  \"rg-\" and make sure it is more than 4 characters long."
+    error_message = "Hey, we have naming standards around here! Please prefix your resource group name with:  \"rg-\" and make sure it is more than 4 characters long."
   }
 
   default = "nope"
