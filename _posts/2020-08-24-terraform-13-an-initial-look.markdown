@@ -413,7 +413,7 @@ As mentioned above this feature allows you to store your Terraform state in a Ku
 Here are the details:
 [https://www.terraform.io/docs/backends/types/kubernetes.html](https://www.terraform.io/docs/backends/types/kubernetes.html)
 
-I have not worked with this to it is hard for me to comment but I think the gist is that, Terraform has given us a new `backend` type.
+I have not worked with this so it is hard for me to comment but I think the gist is that, Terraform has given us a new `backend` type.
 
 ![Backend Types](/assets/backend_types.png)
 
