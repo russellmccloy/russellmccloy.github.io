@@ -18,6 +18,7 @@ Hi, and welcome to my technical blog. I will attempt to keep this updated with a
 - Golang
 - Python
 - .NET
+- PowerShell
 
 > Note: My main cloud is Azure and you won't find much about other cloud platforms here.
 
