@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Azure Monitor - Data collection endpoints and rules in Azure Monitor and Terraform"
+title:  "Azure Monitor - Custom Tables Data collection endpoints and rules in Azure Monitor and Terraform"
 date:   2023-03-15 11:26:18 +1000
 categories: azure
 
