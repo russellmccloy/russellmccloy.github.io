@@ -336,3 +336,10 @@ There are heaps of GitHub events you can consume. Here is a list:
 [Webhook events and payloads](https://docs.Github.com/en/webhooks-and-events/webhooks/webhook-events-and-payloads)
 
 That's all for now.
+
+## Useful Links
+
+* [Registering a GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
+* [Building a GitHub App that responds to webhook events](https://docs.github.com/en/apps/creating-github-apps/writing-code-for-a-github-app/building-a-github-app-that-responds-to-webhook-events)
+* [Node.js tutorial in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)
+* 
