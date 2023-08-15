@@ -8,7 +8,7 @@ categories: general
 
 ## Summary
 
-In this post, I will show how to build a GitHub app with Probot. In later posts I will show other aspects of building and deploying GitHub Aps.
+In this post, I will show how to build a GitHub App. In later posts I will show other aspects of building and deploying GitHub Apps.
 
 ## What is a GitHub App
 
