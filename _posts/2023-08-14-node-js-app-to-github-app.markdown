@@ -12,7 +12,7 @@ In this post, I will show how to build a GitHub App. I will start with a basic `
 
 ## What is a GitHub App
 
-A GitHub App is a `node.js` App that can interact with the GitHub API. Or, at least, this is the way I like to understand it.
+A GitHub App is a `Node.js` App that can interact with the GitHub API. Or, at least, this is the way I like to understand it.
 
 A GitHub App is a type of integration that you can build to interact with and extend the functionality of GitHub. You can build a GitHub App to provide flexibility and reduce friction in your processes, without needing to sign in a user or create a service account.
 
@@ -22,16 +22,16 @@ Once you have written the code for your GitHub App, your app needs to run somewh
 
 GitHub Apps run persistently on a server or compute infrastructure that you provide or run on a user device. They can react to GitHub webhook events as well as events from outside the GitHub ecosystem. They are a good option for operations that span multiple repositories or organizations, or for providing hosted services to other organizations. A GitHub App is the best choice when building a tool with functions that occur primarily outside of GitHub or require more execution time or permissions than what a GitHub Actions workflow is allotted.
 
-## What tools do I need
+## What tools do I need?
 
-> **Note:** I am running Ubuntu `22.04` as I think I get a better `node.js` development experience, so if you are running directly on Windows the versions of the following could be different.
-> 
+> **Note:** I am running Ubuntu `22.04` as I think I get a better `Node.js` development experience, so if you are running directly on Windows the versions of the following could be different.
+
 - Your computer or codespace should use **Node.js** version `v18.17.1` or greater. For more information, see [Node.js](https://nodejs.org/).
 - **npm** version `9.8.1` or greater
 
 ## Build the App
 
-- Let's start by building and running a basic **hello world** `node.js` app so we can see the fundamentals of how we get from a basic `Node.js` app to a full GitHub App.
+- Let's start by building and running a basic **hello world** `Node.js` app so we can see the fundamentals of how we get from a basic `Node.js` app to a full GitHub App.
 - Start by creating a file called `app.js` and put the following code inside it:
 
 ```JavaScript
@@ -53,7 +53,7 @@ console.log(msg);
     "server": "node app.js",
     "lint": "standard"
   },
-  "description": "This is my my node.js app that will become a GitHub App",
+  "description": "This is my my Node.js app that will become a GitHub App",
   "main": "app.js",
   "repository": {
     "type": "git",
@@ -104,7 +104,7 @@ Now my `package.json` file looks like the following:
     "server": "node app.js",
     "lint": "standard"
   },
-  "description": "This is my my node.js app that will become a GitHub App",
+  "description": "This is my my Node.js app that will become a GitHub App",
   "main": "app.js",
   "repository": {
     "type": "git",
@@ -160,7 +160,7 @@ Now my `package.json` file looks like the following:
 - in the Subscribe to Events section I selected `Pull request`
 - Save your GitHub App registration.
 - Now go and select to **generate a private key**. This will download a private key file to your machine. I saved this to `c:\node-js-Github-app.2023-08-14.private-key.pem` but this is probably not the best place to save this.
-- Now in root of your `node.js` project create a `.env` file and add the following:
+- Now in root of your `Node.js` project create a `.env` file and add the following:
 
   ```markdown
   APP_ID="375863"
