@@ -19,11 +19,7 @@ Hi, and welcome to my technical blog. I will attempt to keep this updated with a
 - Python
 - .NET
 - PowerShell
+- Node.js
+- Bicep
 
 > Note: My main cloud is Azure and you won't find much about other cloud platforms here.
-
-**Within this blog you will see post fitting into the following type of thing:**
-
-- **How Tos**: Information I discover in my day to day work that I think might interest others
-- **Code Snippets**: Small code snippets that I think will benefit others or remind me how I did something when I try to do it again in six months.
-- **POCs**: Proof of concepts.
