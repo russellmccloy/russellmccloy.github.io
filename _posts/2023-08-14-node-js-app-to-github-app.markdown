@@ -8,6 +8,8 @@ categories: general
 
 ## Summary
 
+![Node to github](/assets/node_to_github.png)
+
 In this post, I will show how to build a GitHub App. I will start with a basic `Node.js` and gradually turn it into a GitHub App. In later posts I will show other aspects of building and deploying GitHub Apps.
 
 ## What is a GitHub App
