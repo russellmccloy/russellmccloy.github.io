@@ -327,7 +327,7 @@ here is the pull request showing the Message:
 
 ## Best Practice
 
-[Best practices for creating a GitHub App](https://docs.Github.com/en/apps/creating-Github-apps/about-creating-Github-apps/best-practices-for-creating-a-Github-app)
+[Best practices for creating a GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/best-practices-for-creating-a-github-app)
 
 ## What are all the GitHub events I can consume
 
