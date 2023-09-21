@@ -1,3 +1,3 @@
 # russellmccloy.github.io
 
-![workflow](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/jekyll-docker2.yml/badge.svg)
+[![pages-build-deployment](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/pages/pages-build-deployment)
