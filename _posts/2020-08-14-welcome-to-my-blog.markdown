@@ -6,8 +6,6 @@ categories: general
 
 ---
 
-## Welcome
-
 Hi there. This is my new technical blog.
 
 I usually keep a blog but have got a bit lazy of the past few months with regard to keeping it up to date. I also struggled with a decent blogging platform and this morning I found <https://jekyllrb.com/>.

@@ -6,8 +6,6 @@ categories: general
 
 ---
 
-## GitHub Actions with Terraform
-
 Note that you can get the markdown for a status badge to put in your README from the Action home page:
 
 ![Deploy Azure Resources](https://github.com/russellmccloy/github_actions_terraform/workflows/Deploy%20Azure%20Resources/badge.svg)

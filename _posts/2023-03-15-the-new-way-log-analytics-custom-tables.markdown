@@ -6,8 +6,6 @@ categories: azure
 
 ---
 
-## Summary
-
 After some recent work I though I would post about how to send data to a log analytics workspace custom table using Azure Monitor data collection end points and rules.
 Originally I was using the PowerShell shown in [this article](https://learn.microsoft.com/en-au/azure/azure-monitor/logs/data-collector-api?tabs=powershell#sample-requests) to create the custom table automatically and then send data to it. But there is a new way to do this using:
 
