@@ -4,6 +4,7 @@
 
 layout: home
 title: Russell McCloy
+subtitle:  Technical Blog
 ---
 
 [![pages-build-deployment](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/pages/pages-build-deployment)
@@ -14,7 +15,7 @@ Recently I have spent nearly 2 years in Brazil whilst continuing the work for La
 
 By November 2023 myself and my family will be moving to Belfast Northern Ireland and I will be looking for more remote work for a UK company.
 
-Here is my current CV: [Russell McCloy CV Sept 2023.docx](./assets/Russell McCloy CV Sept 2023.docx)
+Download my current CV here: [Russell McCloy CV Sept 2023.docx ⬇️](./assets/Russell McCloy CV Sept 2023.docx)
 
 **My current list of main technical skill are:**
 
@@ -48,5 +49,6 @@ Here is my current CV: [Russell McCloy CV Sept 2023.docx](./assets/Russell McClo
 - Confluence
 - Jira
 - Documentation
-- Remote working
+- Remote working in an opposite time zone for 2 years
 - Clear communication
+- Transparency
