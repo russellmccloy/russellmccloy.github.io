@@ -11,8 +11,10 @@ This post outlines my experience working remotely where I was in an **opposite t
 After the pandemic we decided to move to Brazil to be nearer to my wife's family and give our 1.5 year old daughter a chance to spend time with all her aunties and uncles. This was the best decision we ever made!
 
 I would like to take this opportunity to say thankyou to Lab3 for giving me the chance to continue working for them. 👍
+[https://www.lab3.com.au/](https://www.lab3.com.au/)
+![Thanks Lab3](../assets/lab3-thanks.png)
 
-## The details
+## The Details
 
 So without further ado, I will describe my working life here and the <span style="color: green;">**PROS**</span> and <span style="color: red;">**CONS**</span> of it all.
 
