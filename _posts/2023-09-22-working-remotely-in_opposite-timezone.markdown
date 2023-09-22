@@ -62,5 +62,5 @@ In summary I would say that my time in Brazil working remotely was awesome. I fe
 * Enjoy life in another country
 * Learn another language
 
-thanks</br>
+thanks
 Russ
