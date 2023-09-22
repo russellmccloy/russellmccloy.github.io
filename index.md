@@ -14,6 +14,8 @@ Recently I have spent nearly 2 years in Brazil whilst continuing the work for La
 
 By November 2023 myself and my family will be moving to Belfast Northern Ireland and I will be looking for more remote work for a UK company.
 
+Here is my current CV: [Russell McCloy CV Sept 2023.docx](./assets/Russell McCloy CV Sept 2023.docx)
+
 **My current list of main technical skill are:**
 
 - Azure
