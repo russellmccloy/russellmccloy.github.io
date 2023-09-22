@@ -29,17 +29,17 @@ Here is a list of <span style="color: green;">**PROS**</span> and things I <span
   * Very detailed **Teams** messages outlining what I did for the day as well as anything I needed from my colleagues. I used Techsmith [Snagit](https://www.techsmith.com/screen-capture.html) a lot to help with communication.
   * Very detailed **Jira** tickets.
   * Thorough **Confluence** documentation so my Team members can read about the details.
-  * Thorough `README` files to accompany my code. As a side note, I start every project with a `README` file and document things as I go.
-
+  * Thorough `README` files to accompany my code. As a side note, I start every project with a `README` file and document things as I go.  
+  <br/>
 * **Total Transparency**: During my time here and in my work life in general I believe in total transparency. I think this is important due to the fact that my team needed to put a lot of trust in me and believe I was doing what I said I would do. This meant:
   
   * If I had an issue or could not do some work then I immediately let the team know.
   * Clear and concise communication as mentioned above.
-  * General honesty which I think transcends all areas of life.
-
+  * General honesty which I think transcends all areas of life.  
+  <br/>
 * **Family**: I could be available to spend quality time with my daughter and family: 
-  * As Hamish Blake says in his amazing podcast, **How Other Dads Dad** [https://howotherdadsdad.com/](https://howotherdadsdad.com/): `"We only get ten summers with our kids until they want to go and hang out with their friends instead of us."` My daughter and I have spent many 100s of morning on the swings or reading books and colouring in that I, in a *normal* situation would not have been able to do. I could do my work hours after my time with her and this was perfect.
-
+  * As Hamish Blake says in his amazing podcast, **How Other Dads Dad** [https://howotherdadsdad.com/](https://howotherdadsdad.com/): `"We only get ten summers with our kids until they want to go and hang out with their friends instead of us."` My daughter and I have spent many 100s of morning on the swings or reading books and colouring in that I, in a *normal* situation would not have been able to do. I could do my work hours after my time with her and this was perfect.  
+  <br/>
 * **Backlog**: I always needed to ensure I had a backlog of work. What I mean here is, I always needed about 3 Jira tickets that I could work on at any one time. This is because, at times, I got blocked and needed to have other work to continue with.
 
 * **Another Culture**: I could continue to do the same job that I loved but also experience life in another culture. I also learned to speak Portuguese which was an opportunity I never thought I would have.
