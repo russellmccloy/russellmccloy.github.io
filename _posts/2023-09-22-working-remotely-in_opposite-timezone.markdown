@@ -60,6 +60,7 @@ In summary I would say that my time in Brazil working remotely was awesome. I fe
 * Produce quality work
 * Break up my day into work and non-work activities
 * Enjoy life in another country
+* Spend quality time with my family
 * Learn another language
 
 thanks
