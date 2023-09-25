@@ -9,11 +9,11 @@ subtitle:  Technical Blog
 
 [![pages-build-deployment](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/russellmccloy/russellmccloy.github.io/actions/workflows/pages/pages-build-deployment)
 
-Hi, and welcome to my technical blog. I will attempt to keep this updated with anything I find useful and may help the community or as a reminder to myself how I did things.The articles in the blog will generally focus on the below list of skills and technologies.
+Hi, and welcome to my technical blog. I will attempt to keep this updated with anything I find useful and may help the community or as a reminder to myself how I did things. The articles in the blog will generally focus on the below list of skills and technologies.
 
-Recently I have spent nearly 2 years in Brazil whilst continuing the work for Lab3 (an Australian company) in an opposite timezone. At times this was challenging  but I have learned a lot from the experience in terms of the need for clear communication, documentation and patience!
+Recently I have spent nearly 2 years in Brazil whilst continuing to work for Lab3 (an Australian company) in an opposite timezone. At times this was challenging  but I have learned a lot from the experience in terms of the need for clear communication, documentation and patience!
 
-By November 2023 myself and my family will be moving to Belfast Northern Ireland and I will be looking for more remote work for a UK company.
+By November 2023 myself and my family will be moving to Belfast, Northern Ireland and I will be looking for work with a UK company.
 
 Download my current CV here: [Russell McCloy CV Sept 2023.docx ⬇️](https://drive.google.com/uc?export=download&id=1a_oHOOClo0JGEa1EJnQOSzjYp4cMhF-K)
 
