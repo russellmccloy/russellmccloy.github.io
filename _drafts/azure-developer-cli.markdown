@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Azure Developer CLI"
-date:   2023-10-31 11:26:18 +1000
+date:   2023-09-31 11:26:18 +1000
 categories: general
 
 ---
@@ -114,7 +114,7 @@ azd up
 
 Ok so that was a very nice experience but I don't want to ever really deploy from my local straight to Azure. I would prefer to deploy using **CI/ CD** so next, I will attempt to do this whilst still following the instructions [here](https://github.com/Azure-Samples/todo-csharp-sql/blob/main/README.md)
 
-All `azd` templates include a default GitHub Actions and Azure DevOps pipeline configuration file called `azure-dev.yml``, which is required to setup CI/CD. This configuration file provisions your Azure resources and deploy your code to the main branch. You can find `azure-dev.yml`:
+All `azd` templates include a default GitHub Actions and Azure DevOps pipeline configuration file called `azure-dev.yml`, which is required to setup CI/CD. This configuration file provisions your Azure resources and deploy your code to the main branch. You can find `azure-dev.yml`:
 
 * For GitHub Actions: in the `.github/workflow` directory.
 * For Azure DevOps: in the `azdo/pipeline` directory.
@@ -152,7 +152,7 @@ As you can see in the following picture, all my resources have be deprovisioned:
 
 ## And in Summary
 
-I don't think I have ever spent 6 hours on a Microsoft demo without something not working so this is a first. From start to finish everything was so easy and worked first time. 
+I don't think I have ever spent 6 hours on a Microsoft demo without something not working so this is a first 👍👍. From start to finish everything was so easy and worked first time. 
 
 ## Useful Links
 
