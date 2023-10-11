@@ -50,7 +50,7 @@ or run the following command:
 azd template list
 ```
 
-![azd template list](../_site/assets/azd_list_templates.png)
+![azd template list](../assets/azd_list_templates.png)
 
 I am going to attempt to use the following template: [https://github.com/Azure-Samples/todo-csharp-sql](https://github.com/Azure-Samples/todo-csharp-sql) which is described as:
 
