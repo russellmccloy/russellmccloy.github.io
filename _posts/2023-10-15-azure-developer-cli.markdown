@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Azure Developer CLI"
-date:   2023-10-09 11:26:18 +1000
+date:   2023-10-15 11:26:18 +1000
 categories: general
 
 ---
