@@ -14,9 +14,9 @@ Originally I was using the PowerShell shown in [this article](https://learn.micr
 
 ## Azure Monitor
 
-Azure Monitor is a comprehensive monitoring solution for collecting, analyzing, and responding to telemetry from your cloud and on-premises environments. You can use Azure Monitor to maximize the availability and performance of your applications and services.
+Azure Monitor is a comprehensive monitoring solution for collecting, analysing, and responding to telemetry from your cloud and on-premises environments. You can use Azure Monitor to maximize the availability and performance of your applications and services.
 
-Azure Monitor collects and aggregates the data from every layer and component of your system into a common data platform. It correlates data across multiple Azure subscriptions and tenants, in addition to hosting data for other services. Because this data is stored together, it can be correlated and analyzed using a common set of tools. The data can then be used for analysis and visualizations to help you understand how your applications are performing and respond automatically to system events.
+Azure Monitor collects and aggregates the data from every layer and component of your system into a common data platform. It correlates data across multiple Azure subscriptions and tenants, in addition to hosting data for other services. Because this data is stored together, it can be correlated and analysed using a common set of tools. The data can then be used for analysis and visualizations to help you understand how your applications are performing and respond automatically to system events.
 
 ![Azure Monitor high level architecture](/assets/azure_monitor_high_level_architecture.png)
 
@@ -66,11 +66,11 @@ For the Terraform code you will need the following resources:
 - [azapi_resource](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/azapi_resource) - for the data collection rule
 - [azurerm_role_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment)
 
-**Note:** There is a terraform mdule for the Data Collection Rule [here](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_rule) but it is not flexible enough to create the data collection rule
+**Note:** There is a terraform module for the Data Collection Rule [here](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_rule) but it is not flexible enough to create the data collection rule
 
 #### Custom Table
 
->truncated for the purpose of this post and i appologise as it is not the full code solution, it's just to give you an outline of what to do
+>truncated for the purpose of this post and I apologise as it is not the full code solution, it's just to give you an outline of what to do
 
 ```hcl
 resource "azapi_resource" "my_data_table" {
@@ -118,11 +118,11 @@ resource "azapi_resource" "my_data_table" {
 resource "azurerm_monitor_data_collection_endpoint" "my_data_collection_endpoint" {
 
   name                          = "my-data-collection-endpoint"
-  resource_group_name           = "name of the parent reource group"
+  resource_group_name           = "name of the parent resource group"
   location                      = "the Azure region"
   kind                          = "Windows"
   public_network_access_enabled = true
-  description                   = "useful desription here"
+  description                   = "useful description here"
 }
 ```
 
@@ -132,7 +132,7 @@ resource "azapi_resource" "my_data_collection_rule" {
   type = "Microsoft.Insights/dataCollectionRules@2021-09-01-preview"
   name = "my-data-collection-rule"
 
-  parent_id = "id of the parent reource group"
+  parent_id = "id of the parent resource group"
   body = jsonencode(
     {
       "location" = "the Azure region",
@@ -194,7 +194,7 @@ resource "azapi_resource" "my_data_collection_rule" {
 
 #### Role Assignment
 
-The service pricipal you are using needs the **Monitoring Metrics Publisher** role assignment on the Data Collection Rule:
+The service principal you are using needs the **Monitoring Metrics Publisher** role assignment on the Data Collection Rule:
 
 ```hcl
 resource "azurerm_role_assignment" "my_role_assignment" {
@@ -279,12 +279,12 @@ Function Invoke-LogAnalytics () {
     }
             
     try {
-        Write-Verbose "[$((get-date).TimeOfDay.ToString()) INFORMATION] Writing alert messsage for customer '$($customerId)' with correlationId '$($correlationId)' to the log analytics workspace custom table: : '$($customLawTableName)'"
+        Write-Verbose "[$((get-date).TimeOfDay.ToString()) INFORMATION] Writing alert message for customer '$($customerId)' with correlationId '$($correlationId)' to the log analytics workspace custom table: : '$($customLawTableName)'"
         $bearerToken = Build-Signature -spnAppId $spnAppId -spnSecret $spnSecret -TenantId $tenantId
         Set-LogAnalyticsData -BearerToken $bearerToken -dceURI $dceURI -dcrImmutableId $dcrImmutableId -body $body -CustomTableName $customLawTableName
    
                    
-        Write-Verbose "[$((get-date).TimeOfDay.ToString()) INFORMATION] Wrote alert messsage for customer '$($customerId)' with correlationId '$($correlationId)' to the log analytics workspace custom table: '$($customLawTableName)'"
+        Write-Verbose "[$((get-date).TimeOfDay.ToString()) INFORMATION] Wrote alert message for customer '$($customerId)' with correlationId '$($correlationId)' to the log analytics workspace custom table: '$($customLawTableName)'"
     }
     Catch {
         $errorMessage = ($_ -split "\n")[0]

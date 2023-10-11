@@ -150,7 +150,7 @@ Now my `package.json` file looks like the following:
 - You will need setup a repository that the GitHub App will act on. I created this repository: <https://Github.com/russellmccloy/node_js_github_app_working_repo>
 - On the above mentioned repository you will need to install the GitHub app. follow these instructions <https://docs.Github.com/en/apps/using-Github-apps/installing-your-own-Github-app>
 - Make sure you opt to create a `README` file when you set it up as we will enter this value in the Homepage URL: <https://Github.com/russellmccloy/node_js_github_app_working_repo/blob/main/README.md> when registering your GitHub App.
-- As we are not going to have anywhere, initially, to host our GitHub App (GitHub Aps are not hosted in GitHub. They could be hosted in Azure as a Function App for example.) we will use <https://smee.io/> which is a Webhook payload delivery service.
+- As we are not going to have anywhere, initially, to host our GitHub App (GitHub Apps are not hosted in GitHub. They could be hosted in Azure as a Function App for example.) we will use <https://smee.io/> which is a Webhook payload delivery service.
 - Go into **smee** and click on **Start a new channel** and then copy this url (<https://smee.io/my_channel_id>) into the **Webhook URL** field in the GitHub App registration page.
 - Enter a **Webhook secret** into the registration page. This needs to match the `WEBHOOK_SECRET` value in your `.env` file mentioned further down this page.
 - In Repository Permissions go and select what you want.
