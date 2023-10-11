@@ -22,14 +22,14 @@ winget install microsoft.azd
 
 ## Why Would I use the Azure Developer CLI
 
-If you are not skilled up on Azure Architecture and Best Practices it seems like the Azure Developer CLI is built with you in mind. Using an Azure Developer CLI [template](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/azd-templates?tabs=csharp#choose-a-template), you can use the Azure Developer CLI to create and deploy applications to the Azure Cloud.  
+If you are not skilled up on **Azure Architecture** and **Best Practices** it seems like the Azure Developer CLI is built with you in mind. Using an Azure Developer CLI [template](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/azd-templates?tabs=csharp#choose-a-template), you can use the Azure Developer CLI to create and deploy applications to the Azure Cloud.  
 
 These templates adhere to best practices and take care of things like:
 
-* The **infrastructure** that your application requires
+* The **infrastructure** that your application requires - using Bicep or Terraform
 * Your **application** code
 * A **database** if you need it
-* Other resources such as Azure Storage Accounts or Azure Key Vaults or any Azure resource that you may need if there is a template for it. *(**Note**: you can also create your own templates)*
+* Other resources such as Azure Storage Accounts or Azure Key Vaults or any Azure resources that you may need if there is a template for it. *(**Note**: you can also create your own templates)*
 
 Although I would not use this myself without understanding every file that I am deploying, I could use it for the following reasons:
 
@@ -50,13 +50,15 @@ or run the following command:
 azd template list
 ```
 
+![azd template list](../_site/assets/azd_list_templates.png)
+
 I am going to attempt to use the following template: [https://github.com/Azure-Samples/todo-csharp-sql](https://github.com/Azure-Samples/todo-csharp-sql) which is described as:
 
 > A blueprint for getting a React web app with a C# API and a SQL database on Azure. The blueprint includes sample application code (a ToDo web app) which can be removed and replaced with your own application code. Add your own source code and leverage the Infrastructure as Code assets (written in Bicep) to get up and running quickly.
 
 Iam going to follow the instructions in the `README` [here](https://github.com/Azure-Samples/todo-csharp-sql/blob/main/README.md) and make write down what I do and find as I go.
 
-## Steps and Summary of my learnings
+## Steps I took
 
 * Ensure I have all the **Prerequisites** install on my machine
   * Regarding `Node.js` I opted to install the latest version [20.8.0](https://nodejs.org/dist/v20.8.0/node-v20.8.0-x64.msi)
