@@ -64,7 +64,7 @@ Iam going to follow the instructions in the `README` [here](https://github.com/A
   
   ```powershell
   azd auth login
-  ```  
+  ```
 
 * Make a new directory for `todo-csharp-sql` and navigate to it:
   
