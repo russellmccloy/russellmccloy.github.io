@@ -22,18 +22,19 @@ Download my current CV here: [Russell McCloy CV December 2023.pdf ⬇️](https:
 **My current list of main technical skill are:**
 
 - Azure
-  - General
-  - Architecture
+  - General Azure administration
+  - Architecture - application and infrastructure design
   - Application development
   - Active Directory
   - Infrastructure as code
 - Azure DevOps
-  - General
+  - All standard DevOps functionality
+  - DevOps Rest API development and integration
   - YAML pipeline development
 - GitHub
-  - General
+  - All standard GitHub functionality
   - Actions
-  - Apps
+  - GitHub App Development
 - Automation
 - REST API development
 - Postman
@@ -42,7 +43,7 @@ Download my current CV here: [Russell McCloy CV December 2023.pdf ⬇️](https:
 - Bicep
 - ARM Templates
 - Terraform
-- Testing
+- Unit Testing - C#, PowerShell, Python
 - Golang
 - Python
 - Node.js
