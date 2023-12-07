@@ -15,7 +15,7 @@ Recently I have spent nearly 2 years in Brazil whilst continuing to work for Lab
 
 In November 2023 myself and my family moved to Belfast, Northern Ireland and I am currently looking for work with a UK company.
 
-Download my current CV here: [Russell McCloy CV Sept 2023.docx ⬇️](https://drive.google.com/uc?export=download&id=1a_oHOOClo0JGEa1EJnQOSzjYp4cMhF-K)
+Download my current CV here: [Russell McCloy CV December 2023.pdf ⬇️](https://drive.google.com/file/d/1-crQKf2fraNmJMHpaekbbUxjLYsMvZr-/view?usp=sharing)
 
 
 
