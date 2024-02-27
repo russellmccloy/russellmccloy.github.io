@@ -8,9 +8,15 @@ categories: general
 
 ## Table of Contents
 
-1. [What is Azure AI Search](#whatis)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [What is Azure AI Search?](#what-is-azure-ai-search)
+- [Why use Azure AI Search?](#why-use-azure-ai-search)
+- [The code](#the-code)
+  - [Code Overview](#code-overview)
+- [Useful Links and Documentation I used](#useful-links-and-documentation-i-used)
 
-## Overview whilst investigating
+## Overview
 
 - add search service
   - add a data source - storage account
@@ -19,12 +25,10 @@ categories: general
 - Service principal name: russ-dev-azure-ai-document-search
 - ![Azure OpenAI Approval](/assets/az-doc-intel-ai-enrichment.png)
 
-  
-> Error detecting index schema from data source: "Unable to retrieve blob container for account 'russdevazuresearchsa' using your managed identity. Ensure the resource ID is correct and that the managed identity for your search service has been granted permission (e.g., Storage Blob Data Reader) to read blob container for this account. See https://go.microsoft.com/fwlink/?linkid=2193521 for detailed documentation of required permissions for your scenario."
 
 This post outlines my findings from my investigation of Azure AI Search. The reason I am writing this post is to expand my knowledge of Azure AI. I wanted to look at Azure Open AI but this requires a company email to apply (I don't have a company email right now) to use it and, at present, I am taking some time off work to be with my family.
 
-![Azure OpenAI Approval](/assets/az-doc-intel-approval-required.png)
+![Azure OpenAI Approval](/assets/azure-ai-search-approval-required.png)
 
 I would like to achieve the following outcomes after completing my investigation of Azure AI Search and this port:
 
@@ -33,7 +37,7 @@ I would like to achieve the following outcomes after completing my investigation
 - Write a small proof of concept application that ties everything together.
 - Make all the code available for others to fork and use.
 
-## What is Azure AI Search <a name="whatis"></a>
+## What is Azure AI Search?
 
 Azure AI Search, formerly recognized as "Azure Cognitive Search," delivers secure and scalable information retrieval for user-owned content in both traditional and conversational search applications.
 
@@ -54,8 +58,6 @@ Within your client app, the search experience is crafted using APIs provided by 
 Azure AI Search seamlessly integrates across the Azure platform by incorporating indexers, which automate data ingestion/retrieval from Azure data sources. Additionally, it leverages skillsets that integrate consumable AI from Azure AI services, encompassing capabilities like image and natural language processing. Furthermore, Azure AI Search supports custom AI, allowing you to create or encapsulate it within Azure Machine Learning or wrap it inside Azure Functions.
 
 ## Why use Azure AI Search?
-
-Why Choose Azure AI Search?
 
 Azure AI Search proves advantageous for various application scenarios, including:
 
@@ -80,18 +82,21 @@ For detailed information on specific functionalities, refer to the Features of A
 
 ## The code
 
+> All the code that relates to this post in my public GitHub repository here: [https://github.com/russellmccloy/azure-ai-search](https://github.com/russellmccloy/azure-ai-search)
+
+- I used **Terraform** to deploy most if the infrastructure for Azure AI Search.
+- I used **PowerShell** to deploy some of the Azure AI Search internal infrastructure such as *Datasources, Indexes, Indexers and Skillsets*. The PowerShell was just used to wrap the Azure AI Search REST API.
+- I used documents supplied by Microsoft here:
+
+> [Azure-Samples/azure-search-sample-data/tree/main/ai-enrichment-mixed-media](https://github.com/Azure-Samples/azure-search-sample-data/tree/main/ai-enrichment-mixed-media) but my plan is to replace these with my own documents later on the make the data more meaningful.
+
 ### Code Overview
 
-In the code, PowerShell and Azure AI Search REST APIs are employed to establish a data source, index, indexer, and skillset.
+In the code, **PowerShell** and **Azure AI Search REST APIs** are employed to establish a data source, index, indexer, and skillset.
 
 The indexer establishes a connection with Azure Blob Storage, fetching pre-loaded content. Subsequently, the indexer triggers a skillset for specialized processing, incorporating the enriched content into a search index.
 
 The skillset is linked to an indexer and employs Microsoft's built-in skills for information extraction. The pipeline encompasses Optical Character Recognition (OCR) for images, language detection, key phrase extraction, and entity recognition (organizations, locations, people). Newly generated information within the pipeline is stored in additional fields within an index. Once the index is populated, these fields become accessible for queries, facets, and filters.
-
-> All the code that relates to this post in my public GitHub repository here: [https://github.com/russellmccloy/azure-ai-search](https://github.com/russellmccloy/azure-ai-search)
-
-- I used Terraform to deploy most if the infrastructure for Azure AI Search.
-- I used `PowerShell` to deploy some of the Azure AI Search internal infrastructure such as Datasources, Indexes, Indexers and Skillsets. The PowerShell was just used to wrap the Azure AI Search REST API.
 
 ## Useful Links and Documentation I used
 
