@@ -6,7 +6,11 @@ categories: general
 
 ---
 
-### Overview whilst investigating
+## Table of Contents
+
+1. [What is Azure AI Search](#whatis)
+
+## Overview whilst investigating
 
 - add search service
   - add a data source - storage account
@@ -29,14 +33,7 @@ I would like to achieve the following outcomes after completing my investigation
 - Write a small proof of concept application that ties everything together.
 - Make all the code available for others to fork and use.
 
-## The code
-
-> All the code that relates to this post in my public GitHub repository here: [https://github.com/russellmccloy/azure-ai-search](https://github.com/russellmccloy/azure-ai-search)
-
-- I used Terraform to deploy most if the infrastructure for Azure AI Search. 
-- I used `PowerShell` to deploy some of the Azure AI Search internal infrastructure such as Datasources, Indexes, Indexers and Skillsets.
-
-## What is Azure AI Search
+## What is Azure AI Search <a name="whatis"></a>
 
 Azure AI Search, formerly recognized as "Azure Cognitive Search," delivers secure and scalable information retrieval for user-owned content in both traditional and conversational search applications.
 
@@ -55,6 +52,46 @@ From an architectural perspective, a search service functions as an intermediary
 Within your client app, the search experience is crafted using APIs provided by Azure AI Search. This includes various functionalities such as relevance tuning, semantic ranking, autocomplete, synonym matching, fuzzy matching, pattern matching, filtering, and sorting.
 
 Azure AI Search seamlessly integrates across the Azure platform by incorporating indexers, which automate data ingestion/retrieval from Azure data sources. Additionally, it leverages skillsets that integrate consumable AI from Azure AI services, encompassing capabilities like image and natural language processing. Furthermore, Azure AI Search supports custom AI, allowing you to create or encapsulate it within Azure Machine Learning or wrap it inside Azure Functions.
+
+## Why use Azure AI Search?
+
+Why Choose Azure AI Search?
+
+Azure AI Search proves advantageous for various application scenarios, including:
+
+1. Traditional Full Text and Next-Generation Vector Similarity Search: Employ Azure AI Search for traditional full text searches and advanced vector similarity searches. Empower your generative AI applications with information retrieval capabilities that utilize both keyword and similarity search modalities, ensuring the retrieval of the most relevant results.
+
+2. Consolidation of Heterogeneous Content: Create a user-defined search index comprising vectors and text, allowing you to consolidate diverse content. With Azure AI Search, you have ownership and control over what is searchable.
+
+3. Integration of Data Chunking and Vectorization: Seamlessly integrate data chunking and vectorization to enhance generative AI and RAG (Retrieval-Augmented Generation) applications.
+
+4. Granular Access Control: Implement granular access control at the document level, providing heightened security.
+
+5. Offloading Indexing and Query Workloads: Shift indexing and query workloads to a dedicated search service, optimizing performance.
+
+6. Easy Implementation of Search-Related Features: Leverage Azure AI Search for the effortless implementation of search-related features, including relevance tuning, faceted navigation, filters (including geo-spatial search), synonym mapping, and autocomplete.
+
+7. Transformation of Large Files: Transform large undifferentiated text, image files, or application files stored in Azure Blob Storage or Azure Cosmos DB into searchable chunks during indexing. Cognitive skills add external processing from Azure AI to achieve this.
+
+8. Linguistic or Custom Text Analysis: Add linguistic or custom text analysis with Azure AI Search. Support for Lucene analyzers and Microsoft's natural language processors is available, allowing you to configure analyzers for specialized processing of raw content, such as filtering out diacritics or recognizing and preserving patterns in strings.
+
+For detailed information on specific functionalities, refer to the Features of Azure AI Search documentation.
+
+
+## The code
+
+### Code Overview
+
+In the code, PowerShell and Azure AI Search REST APIs are employed to establish a data source, index, indexer, and skillset.
+
+The indexer establishes a connection with Azure Blob Storage, fetching pre-loaded content. Subsequently, the indexer triggers a skillset for specialized processing, incorporating the enriched content into a search index.
+
+The skillset is linked to an indexer and employs Microsoft's built-in skills for information extraction. The pipeline encompasses Optical Character Recognition (OCR) for images, language detection, key phrase extraction, and entity recognition (organizations, locations, people). Newly generated information within the pipeline is stored in additional fields within an index. Once the index is populated, these fields become accessible for queries, facets, and filters.
+
+> All the code that relates to this post in my public GitHub repository here: [https://github.com/russellmccloy/azure-ai-search](https://github.com/russellmccloy/azure-ai-search)
+
+- I used Terraform to deploy most if the infrastructure for Azure AI Search.
+- I used `PowerShell` to deploy some of the Azure AI Search internal infrastructure such as Datasources, Indexes, Indexers and Skillsets. The PowerShell was just used to wrap the Azure AI Search REST API.
 
 ## Useful Links and Documentation I used
 
