@@ -244,6 +244,31 @@ After I added a new image, shown below, it was additionally shown in the search 
 
 ![Change Detection](https://github.com/russellmccloy/azure-ai-search/blob/main/documents-to-upload-to-storage-account/change_detection.png?raw=true)
 
+## Search Security
+
+An Azure AI Search service is hosted on Azure and is typically accessed by client applications over public network connections. While that pattern is predominant, it's not the only traffic pattern that you need to care about. Understanding all points of entry as well as outbound traffic is necessary background for securing your development and production environments.
+
+Azure AI Search has three basic network traffic patterns:
+
+- **Inbound requests** made by a client to the search service (the predominant pattern):
+  - At a minimum, all inbound requests must be authenticated using either of these options:
+    - Key-based authentication (default). Inbound requests provide a valid API key.
+    - Role-based access control. Microsoft Entra identities and role assignments on your Azure AI Search service authorize access.
+  - Additionally, you can add network security features to further restrict access to the endpoint. You can create either **inbound rules in an IP firewall**, or create **private endpoints that fully shield your search service from the public internet**.
+
+- **Outbound requests** issued by the search service to other services on Azure and elsewhere:
+  - Outbound requests from a search service to other applications are typically made by indexers for text-based indexing, skills-based AI enrichment, and vectorization. Outbound requests include both read and write operations.
+ 
+- **Internal service-to-service requests** over the secure Microsoft backbone network:
+  - Internal requests are secured and managed by Microsoft. You can't configure or control these connections. If you're locking down network access, no action on your part is required because internal traffic isn't customer-configurable.
+
+  Internal traffic consists of:
+
+    - **Service-to-service calls** for tasks like authentication and authorization through **Microsoft Entra ID**, **resource logging** sent to Azure Monitor, and **private endpoint connections** that utilize Azure Private Link.
+    - Requests made to **Azure AI services APIs** for built-in skills.
+    - Requests made to the **machine learning models** that support semantic ranking.
+
+[Read more here](https://learn.microsoft.com/en-us/azure/search/search-security-overview)
 
 ## Issues I encountered
 
@@ -266,6 +291,7 @@ After I added a new image, shown below, it was additionally shown in the search 
 - [The main documentation for Azure AI Search](https://learn.microsoft.com/en-us/azure/search/)
 - [Tutorial: Use REST and AI to generate searchable content from Azure blobs](https://learn.microsoft.com/en-au/azure/search/cognitive-search-tutorial-blob?source=docs)
 - [AI enrichment in Azure AI Search](https://learn.microsoft.com/en-au/azure/search/cognitive-search-concept-intro)
+- [Security overview for Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-security-overview) 🔒
 
 ### Incase you are Interested
 
