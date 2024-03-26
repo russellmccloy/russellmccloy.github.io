@@ -14,8 +14,8 @@ This post outlines my findings from my investigation of **Azure AI Search**. The
 - [The Aim of this Post](#the-aim-of-this-post)
 - [What is Azure AI Search?](#what-is-azure-ai-search)
 - [Why use Azure AI Search?](#why-use-azure-ai-search)
-- [The Code](#the-code)
-  - [Code Walk Through](#code-walk-through)
+- [Code Overview](#code-overview)
+- [Code Walk Through](#code-walk-through)
 - [Issues I encountered](#issues-i-encountered)
 - [Useful Links and Documentation I Used](#useful-links-and-documentation-i-used)
 
@@ -126,7 +126,7 @@ I used the following Skillsets:
     - ipAddress
     - *If no category is provided, all types are returned.*
 
-### Code Walk Through
+## Code Walk Through
 
 > **Note:** this post assumes knowledge of **Terraform** and working with **REST APIs**.
 
@@ -175,6 +175,8 @@ resource "azurerm_storage_container" "this" {
 ![Indexer Status](/assets/azure-ai-search-indexer-status.png)
 
 - Run the Postman endpoint called **6 - Search**. If you search for `linux` you should see the following `json` response. If you look into the 2 images and the Word document, you will see that they mention Linux.
+
+> Find the `linux` search term in the following url:
 
 `https://{prefix_name}-{search_service}.search.windows.net/indexes/{index_name}/docs?search=linux&$select=metadata_storage_name,metadata_storage_path,language,organizations&$count=true&api-version=2020-06-30`
 
@@ -246,7 +248,7 @@ After I added a new image, shown below, it was additionally shown in the search 
 ## Issues I encountered
 
   1. Regarding the resources inside the main Azure AI Search resource *(Indexes, Indexers, Data Sources and SkillSets)*, it seems I can't only deploy these via the Azure AI Search REST API (you can create these using the Azure AI search SDKs. Here is the [.NET SDK](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet). I looked at deploying these with Terraform and then ARM templates (and Bicep) but it looks like it's not possible.
-  2. Regarding the `metadata_storage_path` which, in this case is the URL that points to the blob in my storage container. No matter what I tried, after decoding the base64 string, I could not get a reliable URL to point to a blob in my search results. This means my MVC front end is a bit hacked but as it is not the focus of this proof of concept, I ran out of time to make it work seamlessly. If you look at the **4 - Creatre Indexer** inside the Postman Collection you will see the following:
+  2. Regarding the `metadata_storage_path` which, in this case is the URL that points to the blob in my storage container. No matter what I tried, after decoding the base64 string, I could not get a reliable URL to point to a blob in my search results. This means my MVC front end is a bit hacked but as it is not the focus of this proof of concept, I ran out of time to make it work seamlessly. If you look at the **4 - Create Indexer** inside the Postman Collection you will see the following:
    
   ```json
    "fieldMappings" : [
