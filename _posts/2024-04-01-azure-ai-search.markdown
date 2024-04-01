@@ -270,6 +270,15 @@ Azure AI Search has three basic network traffic patterns:
 
 [Read more here](https://learn.microsoft.com/en-us/azure/search/search-security-overview)
 
+## Why is Azure AI Search so good?
+
+In my opinion Azure AI Search is a great search solution. I think the main reason is, is that it does all the heavy lifting for you. All you need to do is:
+
+- Upload your documents to single or multiple sources
+- Build a client app, to call the Azure AI Search service and display the search results
+- It's totally scaleable for any size organisation
+- It's designed to allow the security you expect in Azure Cloud
+
 ## Issues I encountered
 
   1. Regarding the resources inside the main Azure AI Search resource *(Indexes, Indexers, Data Sources and SkillSets)*, it seems I can't only deploy these via the Azure AI Search REST API (you can create these using the Azure AI search SDKs. Here is the [.NET SDK](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet). I looked at deploying these with Terraform and then ARM templates (and Bicep) but it looks like it's not possible.
