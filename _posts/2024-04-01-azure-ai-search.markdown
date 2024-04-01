@@ -53,7 +53,7 @@ Azure AI Search seamlessly integrates across the Azure platform by incorporating
 
 ![Azure AI Search Enrichment](/assets/azure-ai-search-ai-enrichment.png)
 
-### What is Document Cracking? 
+### What is Document Cracking?
 
 Document cracking is the process of opening files and extracting content. Text-based content can be extracted from files on a service, rows in a table, or items in container or collection. If you add a skillset and image skills, document cracking can also extract images and queue them for image processing.
 
@@ -294,7 +294,7 @@ In my opinion Azure AI Search is a great search solution. I think the main reaso
         },
         ...
    ],
-  ``` 
+  ```
 
 ## Useful Links and Documentation I Used
 
