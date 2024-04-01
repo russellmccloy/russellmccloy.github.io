@@ -16,6 +16,7 @@ This post outlines my findings from my investigation of **Azure AI Search**. The
 - [Why use Azure AI Search?](#why-use-azure-ai-search)
 - [Code Overview](#code-overview)
 - [Code Walk Through](#code-walk-through)
+- [Why is Azure AI Search so good?](#why-is-azure-ai-search-so-good)
 - [Issues I encountered](#issues-i-encountered)
 - [Useful Links and Documentation I Used](#useful-links-and-documentation-i-used)
 
