@@ -222,8 +222,8 @@ resource "azurerm_storage_container" "this" {
 
 ```json
 {
-  "AzureAISearchApiKey": "<ENTER_YOUR_AZURE_AI_SEARCH_API_KEY_HERE>",
-  "AzureAISearchService": "<ENTER_YOUR_AZURE_AI_SEARCH_NAME_HERE>",
+  "AzureAISearchApiKey": "<SET_YOUR_SEARCH_SERVICE_API_KEY_HERE>",
+  "AzureAISearchService": "<SET_YOUR_SEARCH_SERVICE_NAME_HERE>",
   "Logging": {
     "LogLevel": {
       "Default": "Information",
