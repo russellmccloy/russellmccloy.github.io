@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Azure AI Search"
-date:   2024-04-01 11:26:18 +1000
+date:   2024-04-01 23:26:18 +1000
 categories: AI
 
 ---
