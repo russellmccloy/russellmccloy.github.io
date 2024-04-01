@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Azure AI Search"
-date:   2023-10-31 11:26:18 +1000
+date:   2024-04-01 11:26:18 +1000
 categories: AI
 
 ---
@@ -272,6 +272,7 @@ Azure AI Search has three basic network traffic patterns:
 
 ## Issues I encountered
 
+# TODO: remove base64 issue when I find out the fix
   1. Regarding the resources inside the main Azure AI Search resource *(Indexes, Indexers, Data Sources and SkillSets)*, it seems I can't only deploy these via the Azure AI Search REST API (you can create these using the Azure AI search SDKs. Here is the [.NET SDK](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet). I looked at deploying these with Terraform and then ARM templates (and Bicep) but it looks like it's not possible.
   2. Regarding the `metadata_storage_path` which, in this case is the URL that points to the blob in my storage container. No matter what I tried, after decoding the base64 string, I could not get a reliable URL to point to a blob in my search results. This means my MVC front end is a bit hacked but as it is not the focus of this proof of concept, I ran out of time to make it work seamlessly. If you look at the **4 - Create Indexer** inside the Postman Collection you will see the following:
    
