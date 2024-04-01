@@ -236,7 +236,7 @@ resource "azurerm_storage_container" "this" {
 Once you run it, you should see the following:
 ![Front End Search Results](/assets/azure-ai-search-front-end-results.png)
 
-#### Change Detection
+### Change Detection
 
 After an initial search index is created, you might want subsequent indexer jobs to only pick up new and changed documents. For indexed content that originates from Azure Storage, change detection occurs automatically because indexers keep track of the last update using the built-in timestamps on objects and files in Azure Storage. You can read about Change Detection [here](https://learn.microsoft.com/en-us/azure/search/search-howto-index-changed-deleted-blobs?tabs=portal)
 
@@ -272,9 +272,8 @@ Azure AI Search has three basic network traffic patterns:
 
 ## Issues I encountered
 
-# TODO: remove base64 issue when I find out the fix
   1. Regarding the resources inside the main Azure AI Search resource *(Indexes, Indexers, Data Sources and SkillSets)*, it seems I can't only deploy these via the Azure AI Search REST API (you can create these using the Azure AI search SDKs. Here is the [.NET SDK](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet). I looked at deploying these with Terraform and then ARM templates (and Bicep) but it looks like it's not possible.
-  2. Regarding the `metadata_storage_path` which, in this case is the URL that points to the blob in my storage container. No matter what I tried, after decoding the base64 string, I could not get a reliable URL to point to a blob in my search results. This means my MVC front end is a bit hacked but as it is not the focus of this proof of concept, I ran out of time to make it work seamlessly. If you look at the **4 - Create Indexer** inside the Postman Collection you will see the following:
+  2. Regarding the `metadata_storage_path` which, in this case is the URL that points to the blob in my storage container. No matter what I tried, after decoding the base64 string, I could not get a reliable URL to point to a blob in my search results (occasionally there was an extra zero added to the end of the `metadata_storage_path` field). This means my MVC front end is a bit hacked but as it is not the focus of this proof of concept, I ran out of time to make it work seamlessly. If you look at the **4 - Create Indexer** inside the Postman Collection you will see the following:
    
   ```json
    "fieldMappings" : [
