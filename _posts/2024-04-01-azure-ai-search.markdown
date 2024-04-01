@@ -272,10 +272,10 @@ Azure AI Search has three basic network traffic patterns:
 
 ## Why is Azure AI Search so good?
 
-In my opinion Azure AI Search is a great search solution. I think the main reason is, is that it does all the heavy lifting for you. All you need to do is:
+In my opinion Azure AI Search is a great search solution. I think the main reason is, is that it does all the heavy lifting for you:
 
-- Upload your documents to single or multiple sources
-- Build a client app, to call the Azure AI Search service and display the search results
+- All you need to do is upload your documents to single or multiple data sources
+- Then build a client app to call the Azure AI Search service and display the search results
 - It's totally scaleable for any size organisation
 - It's designed to allow the security you expect in Azure Cloud
 
