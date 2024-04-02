@@ -16,19 +16,21 @@ This post outlines my findings from my investigation of **Azure AI Search**. The
 - [Why use Azure AI Search?](#why-use-azure-ai-search)
 - [Code Overview](#code-overview)
 - [Code Walk Through](#code-walk-through)
+- [Change Detection](#change-detection)
+- [Search Security](#search-security)
 - [Why is Azure AI Search so good?](#why-is-azure-ai-search-so-good)
 - [Issues I encountered](#issues-i-encountered)
 - [Useful Links and Documentation I Used](#useful-links-and-documentation-i-used)
 
 ## The Aim of this Post
 
-I would like to achieve the following outcomes after completing my investigation of Azure AI Search and this port:
+I would like to achieve the following outcomes after completing my investigation of Azure AI Search:
 
 - Understand Azure AI Search at a substantial level - enough to send a search request and get a usable response. Once I understand the basics I will try to do more focussed and detailed posts about other Azure AI technologies.
 - Write a small proof of concept application that ties everything together. This will include:
   - The **Terraform** to deploy the main resources to Azure
   - The **Postman Collection** that will take care of deploying the resources internal to the Azure AI Search resource (Terraform doesn't seem to support these yet).
-  - A website front end to consume the search REST API response and display it in a useful way
+  - A **website front end** (.NET MVC) to consume the search REST API response and display it in a useful way
 - Make all the code available for others to fork and use.
 
 ## What is Azure AI Search?
@@ -43,7 +45,7 @@ Fundamental to applications displaying text and vectors, information retrieval p
 4. Utilization of **Azure's scale**, **security**, and **extensive reach**.
 5. **Seamless integration** with Azure at the data layer, machine learning layer, Azure AI services, and Azure OpenAI.
 
-Looking at Azure AI Search from an architectural perspective, a search service functions as an intermediary positioned between external data stores housing your un-indexed data and the client app responsible for sending query requests to a search index and managing the subsequent response.
+Looking at Azure AI Search from an architectural perspective, a search service functions as an **intermediary positioned between external data stores housing your un-indexed data and the client app responsible for sending query requests** to a search index and managing the subsequent response.
 
 ![Azure AI Search architecture](/assets/azure-ai-search-architecture.svg)
 
@@ -95,7 +97,7 @@ For detailed information on specific functionalities, refer to the Features of A
 
 > To import a collection into Postman you can follow the instructions here: [Import data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/)
 
-- I used documents supplied by Microsoft here: [Azure-Samples/azure-search-sample-data/tree/main/ai-enrichment-mixed-media](https://github.com/Azure-Samples/azure-search-sample-data/tree/main/ai-enrichment-mixed-media). I have also included these in the supplied repository [here](https://github.com/russellmccloy/azure-ai-search/tree/main/documents-to-upload-to-storage-account).
+- I used documents supplied, plus 1 of my own that are mentioned in the [Change Detection](#change-detection) section below, by Microsoft here: [Azure-Samples/azure-search-sample-data/tree/main/ai-enrichment-mixed-media](https://github.com/Azure-Samples/azure-search-sample-data/tree/main/ai-enrichment-mixed-media). I have also included these in the supplied repository [here](https://github.com/russellmccloy/azure-ai-search/tree/main/documents-to-upload-to-storage-account).
 
 After the Postman Collection has successfully run (*I recommend running each step manually one at a time*):
 
@@ -162,6 +164,7 @@ resource "azurerm_storage_container" "this" {
   container_access_type = local.config.azurerm_storage_container.access_type # for the demo it's not private but it should be
 }
 ```
+<br/>
 
 - **Upload** the documents to the storage account and container. Remember the documents are [here](https://github.com/russellmccloy/azure-ai-search/tree/main/documents-to-upload-to-storage-account)
 
@@ -276,7 +279,7 @@ Azure AI Search has three basic network traffic patterns:
 In my opinion Azure AI Search is a great search solution. I think the main reason is, is that it does all the heavy lifting for you:
 
 - All you need to do is upload your documents to single or multiple data sources
-- Then build a client app to call the Azure AI Search service and display the search results
+- As Azure AI Search is an intermediary positioned between external data stores housing your un-indexed data and the client app responsible for sending query requests all you need to do is  build a client app to call the Azure AI Search service and display the search results.
 - It's totally scaleable for any size organisation
 - It's designed to allow the security you expect in Azure Cloud
 
