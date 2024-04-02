@@ -25,6 +25,7 @@ Download my current CV here: [Russell McCloy CV April 2024.pdf ⬇️](https://d
   - Application development
   - Microsoft Entra ID
   - Infrastructure as code (IAC)
+  - AI
 - Azure DevOps
   - All standard DevOps functionality
   - DevOps Rest API development and integration
