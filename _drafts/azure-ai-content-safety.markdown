@@ -1,0 +1,160 @@
+---
+layout: post
+title:  "Azure AI Content Safety"
+date:   2023-05-01 23:26:18 +1000  # TODO: the date is hacked to show drafts
+categories: AI
+
+---
+
+> [!CAUTION]  
+> **The sample data and code in this post may contain offensive content. User discretion is advised.**
+
+This post outlines my findings from my investigation of **Azure AI Content Safety**. The reason I am writing this post is to expand my knowledge of Azure AI by producing a working proof of concept that I will make available in a GitHub repository.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [The Aim of this Post](#the-aim-of-this-post)
+- [What is Azure AI Content Safety?](#what-is-azure-ai-content-safety)
+- [Why use Azure AI Content Safety?](#why-use-azure-ai-content-safety)
+- **[Analyse Text](#analyse-text)**
+  - [Code Overview](#code-overview)
+  - [Code and Related Walk Through](#code-and-related-walk-through)
+  - [Content Safety Studio](#content-safety-studio)
+  - [Direct API Calls](#direct-api-calls)
+  - [A User Interface to Demonstrate a Real Work Scenario](#a-user-interface-to-demonstrate-a-real-work-scenario)
+- **[Analyse Images](#analyse-images)**
+  - [Code Overview](#code-overview)
+  - [Code and Related Walk Through](#code-and-related-walk-through-1)
+  - [Content Safety Studio](#content-safety-studio)
+  - [Direct API Calls](#direct-api-calls)
+  - [A User Interface to Demonstrate a Real Work Scenario](#a-user-interface-to-demonstrate-a-real-work-scenario)
+- [Security](#security)
+- [Issues I encountered](#issues-i-encountered)
+- [Useful Links and Documentation I Used](#useful-links-and-documentation-i-used)
+
+## The Aim of this Post
+
+I would like to achieve the following outcomes after completing my investigation of Azure AI Search:
+
+- Understand Azure AI Content Safety at a substantial level - enough to use send some data to the Azure AI Content Safety API and get useful responses.
+- Write a small proof of concept application that ties everything together. This will include:
+  - ??? // TODO: add what the POC will include
+  - Analysing text and images for moderation // TODO: did I include both text and image moderation?
+- Make all the code available for others to fork and use.
+
+## What is Azure AI Content Safety?
+
+// TODO: put content here
+
+## Why use Azure AI Content Safety?
+
+// TODO: put content here
+
+## Analyse Text
+
+### Code Overview
+
+> All the code that relates to this post is in my public GitHub repository here: [https://github.com/russellmccloy/azure-ai-content-safety](https://github.com/russellmccloy/azure-ai-content-safety)
+
+- I used a `.NET8.0` MVC application so I could consume the `Azure.AI.ContentSafety` SDK directly from C# code whereas my last post [Azure AI Search](https://russellmccloy.github.io/2024-04-01-azure-ai-search/) consumes a REST API directly.
+
+### Code and Related Walk Through
+
+> **Note:** this post assumes knowledge of **Terraform**, **C#**, **SDKs**.  // TODO: More things
+
+- **Terraform**: Run the Terraform to deploy the main resources I require for Azure AI Content Safety. The `main.tf` file is here [main.tf](https://github.com/russellmccloy/azure-ai-content-safety/blob/main/main.tf)
+
+#### Content Safety Studio
+
+- Once it's deployed you can use [Content Safety Studio](https://contentsafety.cognitive.azure.com/) to run some initial calls to the API:
+
+  ![ContentSafetyStudio](/assets/azure-ai-content-safety-studio1.png)
+
+  > **Threshold**: Content with a severity level less than the threshold will be allowed. Content will be annotated by severity level Low, Medium or High. Low means it contains any slightly harmful content. High means it has seriously dangerous content.
+
+  - You can see from the above picture that I sent some very safe content to the API:
+
+    ```text
+    Chopping tomatoes and cutting them into cubes or wedges 
+    are great ways to practice your knife skills.
+    ```
+
+  - Regarding the categories that are measured, you can read more about these here: [Harm Categories](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories?tabs=warning#harm-categories). You can see that the content has been allowed:
+  
+  ![Allowed Content](/assets/azure-ai-content-safety-studio-allowed.png)
+
+  - If I then select some content that appears to contain more risk the content is blocked:
+
+    ```text
+    A 51-year-old man was found dead in his car. 
+    There were blood stains on the dashboard and windscreen. 
+    At autopsy, a deep, oblique, long incised injury was found on the front of the neck. 
+    It turns out that he died by suicide.
+    ```
+
+  ![Blocked Content](/assets/azure-ai-content-safety-studio-blocked.png)
+
+- After playing around in the Content Safety Studio we can move onto calling the API directly.
+
+#### Direct API Calls
+
+> **Note:** I have included a Postman collection within the GitHub repository. The collection is located [here](https://github.com/russellmccloy/azure-ai-content-safety/blob/main/Content%20Safety%20Service.postman_collection.json). Please remember to update the variables [here](https://github.com/russellmccloy/azure-ai-content-safety/blob/3fe0c35b7efbd4b4dea3a0d7ed366ca0bde78f13/Content%20Safety%20Service.postman_collection.json#L77)
+
+So, when I call the **Analyse Text** endpoint in Postman with the following details:
+
+- **URL:** `https://{{content_safety_service}}/contentsafety/text:analyze?api-version=2023-10-01`
+- **Request Body:**
+
+  ```json
+  {
+    "text": "A 51-year-old man was found dead in his car. There were blood stains on the dashboard and windscreen. At autopsy, a deep, oblique, long incised injury was found on the front of the neck. It turns out that he died by suicide.",
+    "categories": [
+      "Hate",
+      "SelfHarm",
+      "Violence",
+      "Sexual"
+    ],
+    "blocklistNames": [],
+    "haltOnBlocklistHit": true,
+    "outputType": "FourSeverityLevels"
+  }
+  ```
+
+#### A User Interface to Demonstrate a Real Work Scenario
+
+// TODO: put content here
+
+## Analyse Images
+
+### Code Overview
+
+// TODO: put content here
+
+### Code and Related Walk Through
+
+// TODO: put content here
+
+#### Content Safety Studio
+
+// TODO: put content here
+
+#### Direct API Calls
+
+// TODO: put content here
+
+## Security
+
+// TODO: put content here
+
+## Useful Links and Documentation I Used
+
+- [QuickStart: Analyze text content](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/quickstart-text?tabs=cli%2Cwindows&pivots=programming-language-csharp)
+- [QuickStart: Analyze image content](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/quickstart-image?tabs=visual-studio%2Cwindows&pivots=programming-language-csharp) // TODO: did I include images in this post?
+- [Terraform: azurerm_cognitive_account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account)
+- [AzureAIContentSafety](https://github.com/Azure-Samples/AzureAIContentSafety)
+- [AnalyzeText](https://github.com/Azure-Samples/AzureAIContentSafety/tree/main/dotnet/1.0.0/AnalyzeText)
+- [AnalyzeImage](https://github.com/Azure-Samples/AzureAIContentSafety/tree/main/dotnet/1.0.0/AnalyzeImage)
+- [Pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/)
+- [Content Safety Service REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/content-safety-service-2023-10-01/operations/TextBlocklists_AddOrUpdateBlocklistItems)
+- [Content Safety Studio](https://contentsafety.cognitive.azure.com/)

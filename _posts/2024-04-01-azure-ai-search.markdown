@@ -3,7 +3,6 @@ layout: post
 title:  "Azure AI Search"
 date:   2024-04-01 23:26:18 +1000
 categories: AI
-
 ---
 
 This post outlines my findings from my investigation of **Azure AI Search**. The reason I am writing this post is to expand my knowledge of Azure AI by producing a working proof of concept that I will make available in a GitHub repository.
