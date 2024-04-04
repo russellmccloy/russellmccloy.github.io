@@ -5,8 +5,7 @@ date:   2024-04-01 23:26:18 +1000
 categories: AI
 ---
 
-> [!NOTE]
-> I will be back in Australia before the end of April 2024 and will be looking for a new position within my skillset (latest CV available on request) so please let me know if you know of any roles coming up.
+> ❗I will be back in Australia before the end of April 2024 and will be looking for a new position within my skillset (latest CV available on request) so please let me know if you know of any roles coming up.
 I will be based 1 hour north of Sydney.
 
 This post outlines my findings from my investigation of **Azure AI Search**. The reason I am writing this post is to expand my knowledge of Azure AI by producing a working proof of concept that I will make available in a GitHub repository.
