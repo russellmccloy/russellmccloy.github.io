@@ -53,3 +53,6 @@ Download my current CV here: [Russell McCloy CV April 2024.pdf ⬇️](https://d
 - Documentation
 - Clear communication
 - Transparency
+
+<hr/>
+<h1 style="font-size: 70px;">Blog Posts</h1>
