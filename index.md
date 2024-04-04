@@ -13,7 +13,7 @@ Hi, and welcome to my technical blog. I will attempt to keep this updated with a
 
 Recently I have spent nearly 2 years in Brazil whilst continuing to work for Lab3 (an Australian company) in an opposite time zone. At times this was challenging  but I have learned a lot from the experience in terms of the need for clear communication, documentation and patience!
 
-In November 2023 myself and my family moved to Belfast, Northern Ireland and I am currently looking for work with a UK company.
+In the last six months from October 2023 until April 2024 I took time off to spend high quality time with my daughter.
 
 Download my current CV here: [Russell McCloy CV April 2024.pdf ⬇️](https://drive.google.com/uc?export=download&id=11CWP_--H3_e-gyPW7_fGacDix1QHju3V)
 
