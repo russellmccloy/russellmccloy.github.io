@@ -120,7 +120,7 @@ I'm sure you can imagine lots of use cases for this technology. For example, her
 
 #### Direct API Calls
 
-> **Note:** I have included a Postman collection within the GitHub repository. The collection is located [here](https://github.com/russellmccloy/azure-ai-content-safety/blob/main/Content%20Safety%20Service.postman_collection.json). Please remember to update the variables [here](https://github.com/russellmccloy/azure-ai-content-safety/blob/d46534d75f35dfec7b7b792e6e72756c260f747d/Content%20Safety%20Service.postman_collection.json#L257)
+> **Note:** I have included a Postman collection within the GitHub repository. The collection is located [here](https://github.com/russellmccloy/azure-ai-content-safety/blob/main/Content%20Safety%20Service.postman_collection.json). Please remember to update the variables [here](https://github.com/russellmccloy/azure-ai-content-safety/blob/a0804f92c5995aeb9c4c1c5e49d1aecd6e9890c5/Content%20Safety%20Service.postman_collection.json#L257)
 
 So, when I call the **Analyse Text** endpoint in Postman with the following details:
 
