@@ -164,6 +164,12 @@ So, when I call the **Analyse Text** endpoint in Postman with the following deta
 
 // TODO: put content here
 
+#### A User Interface to Demonstrate a Real Work Scenario
+
+// TODO: put content here
+// TODO: Use the following C#: https://learn.microsoft.com/en-gb/azure/ai-services/content-safety/quickstart-image?pivots=programming-language-csharp&tabs=visual-studio%2Cwindows#analyze-image-content
+
+
 ## Security
 
 // TODO: put content here
@@ -182,3 +188,4 @@ So, when I call the **Analyse Text** endpoint in Postman with the following deta
 - [Content Safety Service REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/content-safety-service-2023-10-01/operations/TextBlocklists_AddOrUpdateBlocklistItems)
 - [Content Safety Studio](https://contentsafety.cognitive.azure.com/)
 - [Azure.AI.ContentSafety SDK](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/contentsafety/Azure.AI.ContentSafety)
+- [image-to-base64-converter](https://codebeautify.org/image-to-base64-converter)
